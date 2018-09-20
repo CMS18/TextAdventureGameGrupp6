@@ -6,9 +6,22 @@ using System.Threading.Tasks;
 
 namespace TextAdventure
 {
-    class Item
+    public class Item
     {
-            // Namn, beskrivning
-            // Use, Inspect
+        public string name;
+        public Dictionary<string, string> description;
+
+
+
+        public void Use()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Inspect()
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }

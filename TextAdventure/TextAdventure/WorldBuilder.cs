@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TextAdventure
 {
-    class WorldBuilder
+    public class WorldBuilder
     {
 
             // Lista med room, skapa rum och items

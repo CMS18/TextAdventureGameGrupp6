@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TextAdventure
 {
-    class Room
+    public class Room
     {
         // Beskrivningar, Room Inventory
         // Look, Inspect

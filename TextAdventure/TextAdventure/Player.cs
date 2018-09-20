@@ -6,9 +6,26 @@ using System.Threading.Tasks;
 
 namespace TextAdventure
 {
-    class Player
+    public class Player
     {
+        public string name { get; set; }
+       
             // Namn, Inventory List, Current position
             // Drop Item, Pickup item, show inventory
+
+        public void DropItem()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void PickItem()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ShowInventory()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

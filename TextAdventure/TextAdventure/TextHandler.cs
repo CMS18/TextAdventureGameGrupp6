@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TextAdventure
 {
-    class TextHandler
+    public class TextHandler
     {
         // Kontrollera och hantera indata
     }

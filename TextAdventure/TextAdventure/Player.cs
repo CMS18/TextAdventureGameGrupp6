@@ -13,11 +13,13 @@ namespace TextAdventure
         public string playerName { get { return playerName; } set { playerName = value; } }
         public Dictionary<string, Item> playerInventory;
         public Room currentLocation;
-        public Item description;
+        //public Item description;
 
         public Player()
         {
             playerInventory = new Dictionary<string, Item>();
+            currentLocation = new Room();
+            //description = new Item();
         }
 
         public void DropItem(string item)
@@ -43,7 +45,7 @@ namespace TextAdventure
         public void InspectItem(string item)
         {
             Item tempItem = playerInventory[item];
-            Console.WriteLine(tempItem.playerInventoryDesc[item]);
+            Console.WriteLine(tempItem.playerInventoryDesc);
         }
     }
 }

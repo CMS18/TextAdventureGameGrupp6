@@ -55,7 +55,7 @@ namespace TextAdventure
                 player.currentLocation.Look();
                 CheckText();
 
-                break;
+                //break;
             }
         }
 

@@ -9,9 +9,8 @@ namespace TextAdventure
     public class Player
     {
         public string playerName { get { return playerName; } set { playerName = value; } }
-       
-            // Namn, Inventory List, Current position
-            // Drop Item, Pickup item, show inventory
+        public Dictionary<string, Item> playerInventory;
+        public Room currentLocation;
 
         public Player()
         {
@@ -29,6 +28,11 @@ namespace TextAdventure
         }
 
         public void ShowInventory()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void InspectItem()
         {
             throw new NotImplementedException();
         }

@@ -21,11 +21,7 @@ namespace TextAdventure
         {
             throw new NotImplementedException();
         }
-
-        public void Inspect()
-        {
-            throw new NotImplementedException();
-        }
+        
 
     }
 }

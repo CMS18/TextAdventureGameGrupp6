@@ -14,7 +14,7 @@ namespace TextAdventure
 
         public Room()
         {
-
+            roomInventory = new Dictionary<string, Item>();
         }
 
         public Room(string name, string roomDescription, Dictionary<string,Item> roomInventory)

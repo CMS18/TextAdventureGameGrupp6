@@ -17,7 +17,7 @@ namespace TextAdventure
 
         public Player()
         {
-
+            playerInventory = new Dictionary<string, Item>();
         }
 
         public void DropItem(string item)

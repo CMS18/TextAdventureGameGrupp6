@@ -9,5 +9,8 @@ namespace TextAdventure
     public class TextHandler
     {
         // Kontrollera och hantera indata
+        string[] userInput = Console.ReadLine().ToUpper().Split(' ');
+
+
     }
 }

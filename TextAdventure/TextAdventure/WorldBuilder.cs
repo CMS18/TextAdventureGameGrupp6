@@ -8,8 +8,22 @@ namespace TextAdventure
 {
     public class WorldBuilder
     {
+        //North, west, east, south, middle.
         public Dictionary<string, Room> roomList;
 
-        // Lista med room, skapa rum och items
+        public void CreateRooms()
+        {
+            Room startRoom = new Room();
+            startRoom.roomDescription = "";
+            //startRoom.roomInventory.Add(Item);
+
+
+        }
+
+        public void CreateItems()
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }

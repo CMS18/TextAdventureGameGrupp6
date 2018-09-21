@@ -12,7 +12,12 @@ namespace TextAdventure
         public string roomDescription;
         public Dictionary<string, Item> roomInventory;
 
-        public void InspectRoom()
+        public void Look()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void InspectItem()
         {
             throw new NotImplementedException();
         }

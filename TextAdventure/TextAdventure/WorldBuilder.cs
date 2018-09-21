@@ -14,20 +14,23 @@ namespace TextAdventure
 
         public WorldBuilder()
         {
-
+            roomCollection = new Dictionary<string, Room>();
+            itemCollection = new Dictionary<string, Item>();
         }
 
-        public void CreateRooms()
+        public Dictionary<string, Room> CreateRooms()
         {
             List<string> items = new List<string>();
             items.Add("CANDYBAR");
             items.Add("GAMEGUIDE");
-            CreateRoom( "START", "You are standing in a hallway. Surrounded by doorways all leading to different rooms.", items );
+            CreateRoom("START", "You are standing in a hallway. Surrounded by doorways all leading to different rooms.", items);
 
             items.Clear();
             items.Add("KEY");
             items.Add("SWORD");
             CreateRoom("NORTH", "To the north of the house, around the room you see a table and a door.", items);
+
+            return roomCollection;
 
         }
 
@@ -46,6 +49,8 @@ namespace TextAdventure
         {
             CreateItem("CANDYBAR", "It looks tasty.", "There's a candybar lying all alone on the floor.");
             CreateItem("GAMEGUIDE", "Valid commands are Go, Use, Take, Drop, Inspect and Look.", "An old and dusty guide for some game long forgotten is lying here.");
+            CreateItem("KEY", "", "");
+            CreateItem("SWORD", "", "");
             
         }
 

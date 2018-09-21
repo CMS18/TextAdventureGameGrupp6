@@ -14,7 +14,8 @@ namespace TextAdventure
 
         public Item()
         {
-
+            playerInventoryDesc = new Dictionary<string, string>();
+            roomInvectoryDesc = new Dictionary<string, string>();
         }
 
         public void Use(string itemOne, string itemTwo)

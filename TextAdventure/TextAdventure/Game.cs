@@ -11,21 +11,24 @@ namespace TextAdventure
     {
         public Player player;
         public Dictionary<string, Room> roomCollection;
-        public TextHandler th = new TextHandler();
+        public Dictionary<string, Item> itemCollection;
+        //public TextHandler th = new TextHandler();
         public string[,] map = new string[3, 3];
+        public string[] userInput;
         public int xCoord = 1;
         public int yCoord = 1;
 
         public Game()
         {
-
+            roomCollection = new Dictionary<string, Room>();
+            player = new Player();
         }
 
         public void NewGame()
         {
             WorldBuilder wb = new WorldBuilder();
             wb.CreateItems();
-            wb.CreateRooms();
+            roomCollection = wb.CreateRooms();
             CreateMap();
         }
 
@@ -41,13 +44,18 @@ namespace TextAdventure
         public void PlayingGame()
         {
             NewGame();
+            List<string> keys = new List<string>(roomCollection.Keys);
+            for (int i = 0; i < keys.Count; i++)
+            {
+                Console.WriteLine(keys[i]);
+            }
             player.currentLocation = roomCollection["START"];
             Console.WriteLine("Welcome to Pork. A simple text adventure game made for simple people.");
             bool stillPlaying = true;
             while (stillPlaying)
             {
                 player.currentLocation.Look();
-                th.CheckText();
+                CheckText();
 
                 break;
             }
@@ -110,5 +118,49 @@ namespace TextAdventure
                 
         }
 
+        public void CheckText()
+        {
+            userInput = Console.ReadLine().ToUpper().Split(' ');
+
+            if (userInput[0].Equals("GO") || userInput[0].Equals("G"))
+            {
+                if (userInput[1].Equals("NORTH") || userInput[1].Equals("WEST") || userInput[1].Equals("EAST") || userInput[1].Equals("SOUTH"))
+                {
+                    Move(userInput[1]);
+                }
+
+            }
+            else if (userInput[0].Equals("USE") || userInput[0].Equals("U"))
+            {
+                //Use(userInput[1], userInput[3]);
+            }
+            else if (userInput[0].Equals("TAKE") || userInput[0].Equals("T"))
+            {
+                if (player.currentLocation.roomInventory.ContainsKey(userInput[1]))
+                {
+                    player.PickItem(userInput[1]);
+                }
+
+            }
+            else if (userInput[0].Equals("DROP") || userInput[0].Equals("D"))
+            {
+                player.DropItem(userInput[1]);
+            }
+            else if (userInput[0].Equals("INSPECT") || userInput[0].Equals("I"))
+            {
+                if (player.currentLocation.roomInventory.ContainsKey(userInput[1]))
+                {
+                    player.currentLocation.InspectItem(userInput[1]);
+                }
+                else if (player.playerInventory.ContainsKey(userInput[1]))
+                {
+                    player.InspectItem(userInput[1]);
+                }
+            }
+            else if (userInput[0].Equals("LOOK") || userInput[0].Equals("L"))
+            {
+                player.currentLocation.Look();
+            }
+        }
     }
 }

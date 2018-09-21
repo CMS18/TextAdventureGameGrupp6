@@ -17,6 +17,7 @@ namespace TextAdventure
             
         }
 
+        /*
         public void CheckText()
         {
             userInput = Console.ReadLine().ToUpper().Split(' ');
@@ -61,5 +62,6 @@ namespace TextAdventure
                 base.player.currentLocation.Look();
             }
         }
+        */
     }
 }

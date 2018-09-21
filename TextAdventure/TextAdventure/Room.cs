@@ -26,12 +26,20 @@ namespace TextAdventure
 
         public void Look()
         {
-            throw new NotImplementedException();
+            Console.Write(roomDescription + " ");
+            List<string> keys = new List<string>(roomInventory.Keys);
+            for (int i = 0; i < roomInventory.Count; i++)
+            {
+                Item tempItem = roomInventory[keys[i]];
+                Console.Write(tempItem.roomInvectoryDesc + " ");
+            }
+
         }
 
-        public void InspectItem()
+        public void InspectItem(string itemToInsp)
         {
-            throw new NotImplementedException();
+            Item tempItem = roomInventory[itemToInsp];
+            Console.WriteLine(tempItem.roomInvectoryDesc);
         }
         
     }

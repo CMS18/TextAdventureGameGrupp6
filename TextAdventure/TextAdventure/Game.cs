@@ -35,7 +35,7 @@ namespace TextAdventure
             {
                 player.currentLocation.Look();
                 th.CheckText();
-
+            
                 break;
             }
         }

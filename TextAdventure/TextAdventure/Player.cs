@@ -11,7 +11,6 @@ namespace TextAdventure
         public string playerName { get { return playerName; } set { playerName = value; } }
        
             // Namn, Inventory List, Current position
-            // Drop Item, Pickup item, show inventory
 
         public Player()
         {

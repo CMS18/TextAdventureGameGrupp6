@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TextAdventure
 {
-    public class TextHandler
+    public class TextHandler : Game
     {
         // Kontrollera och hantera indata
 
@@ -35,7 +35,7 @@ namespace TextAdventure
             }
             else if (userInput[0].Equals("TAKE") || userInput[0].Equals("T"))
             {
-                if (base.player.currentLocation.roomInventory.ContainsKey(userInput[1]))
+                if (player.currentLocation.roomInventory.ContainsKey(userInput[1]))
                 {
                     base.player.PickItem(userInput[1]);
                 }

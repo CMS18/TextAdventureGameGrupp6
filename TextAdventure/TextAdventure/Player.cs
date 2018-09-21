@@ -13,6 +13,7 @@ namespace TextAdventure
         public string playerName { get { return playerName; } set { playerName = value; } }
         public Dictionary<string, Item> playerInventory;
         public Room currentLocation;
+        public Item description;
 
         public Player()
         {
@@ -25,19 +26,24 @@ namespace TextAdventure
             playerInventory.Remove(item);
         }
 
-        public void PickItem()
+        public void PickItem(string item)
         {
-            throw new NotImplementedException();
+            playerInventory.Add(item,currentLocation.roomInventory[item]);
+            currentLocation.roomInventory.Remove(item);
         }
 
         public void ShowInventory()
         {
-            throw new NotImplementedException();
+            foreach (var item in playerInventory.Keys)
+            {
+                Console.Write(item + ", ");
+            }
         }
 
-        public void InspectItem()
+        public void InspectItem(string item)
         {
-            throw new NotImplementedException();
+            Item tempItem = playerInventory[item];
+            Console.WriteLine(tempItem.playerInventoryDesc[item]);
         }
     }
 }

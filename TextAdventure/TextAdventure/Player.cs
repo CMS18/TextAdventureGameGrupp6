@@ -9,6 +9,7 @@ namespace TextAdventure
     public class Player
     {
         public string playerName { get { return playerName; } set { playerName = value; } }
+
        
             // Namn, Inventory List, Current position
 
@@ -19,6 +20,7 @@ namespace TextAdventure
 
         public void DropItem()
         {
+            
             throw new NotImplementedException();
         }
 

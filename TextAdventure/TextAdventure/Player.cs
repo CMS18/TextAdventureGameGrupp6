@@ -1,6 +1,8 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,10 +19,10 @@ namespace TextAdventure
 
         }
 
-        public void DropItem()
+        public void DropItem(string item)
         {
-            
-            throw new NotImplementedException();
+            currentLocation.roomInventory.Add(item, playerInventory[item]);
+            playerInventory.Remove(item);
         }
 
         public void PickItem()

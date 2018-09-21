@@ -31,6 +31,7 @@ namespace TextAdventure
             for (int i = 0; i < roomInventory.Count; i++)
             {
                 Item tempItem = roomInventory[keys[i]];
+                
                 Console.Write(tempItem.roomInvectoryDesc + " ");
             }
 

@@ -27,7 +27,7 @@ namespace TextAdventure
         public void NewGame()
         {
             WorldBuilder wb = new WorldBuilder();
-            wb.CreateItems();
+            itemCollection = wb.CreateItems();
             roomCollection = wb.CreateRooms();
             CreateMap();
         }
@@ -44,13 +44,11 @@ namespace TextAdventure
         public void PlayingGame()
         {
             NewGame();
-            List<string> keys = new List<string>(roomCollection.Keys);
-            for (int i = 0; i < keys.Count; i++)
-            {
-                Console.WriteLine(keys[i]);
-            }
+            Console.WriteLine(roomCollection["START"].roomInventory["CANDYBAR"]);
             player.currentLocation = roomCollection["START"];
+            Console.WriteLine();
             Console.WriteLine("Welcome to Pork. A simple text adventure game made for simple people.");
+            Console.WriteLine();
             bool stillPlaying = true;
             while (stillPlaying)
             {

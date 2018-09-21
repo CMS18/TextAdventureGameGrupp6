@@ -11,14 +11,18 @@ namespace TextAdventure
         //North, west, east, south, middle.
         public Dictionary<string, Room> roomList;
 
+        public WorldBuilder()
+        {
+
+        }
+
         public void CreateRooms()
         {
             Room startRoom = new Room();
             startRoom.roomDescription = "";
             //startRoom.roomInventory.Add(Item);
 
-
-
+           
         }
 
         public void CreateItems()

@@ -12,6 +12,11 @@ namespace TextAdventure
         public Player player;
         public Dictionary<string, Room> roomList;
 
+        public Game()
+        {
+
+        }
+
         public void NewGame()
         {
             throw new NotImplementedException();

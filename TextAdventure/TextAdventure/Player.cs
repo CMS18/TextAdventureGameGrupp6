@@ -13,6 +13,11 @@ namespace TextAdventure
             // Namn, Inventory List, Current position
             // Drop Item, Pickup item, show inventory
 
+        public Player()
+        {
+
+        }
+
         public void DropItem()
         {
             throw new NotImplementedException();

@@ -18,11 +18,15 @@ namespace TextAdventure
             //startRoom.roomInventory.Add(Item);
 
 
+
         }
 
         public void CreateItems()
         {
-            throw new NotImplementedException();
+            Item item = new Item();
+            item.name = "";
+            item.playerInventoryDesc.Add(item.name, "");
+            item.roomInvectoryDesc.Add(item.name, "");
         }
 
     }

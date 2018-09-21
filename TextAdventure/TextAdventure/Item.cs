@@ -9,7 +9,8 @@ namespace TextAdventure
     public class Item
     {
         public string name;
-        public Dictionary<string, string> itemDescription;
+        public Dictionary<string, string> playerInventoryDesc;
+        public Dictionary<string, string> roomInvectoryDesc;
         
         public void Use()
         {

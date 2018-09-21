@@ -36,10 +36,13 @@ namespace TextAdventure
 
         public void ShowInventory()
         {
+            int itemNr = 1;
             foreach (var item in playerInventory.Keys)
             {
-                Console.Write(item + ", ");
+                Console.WriteLine(itemNr + ". " + item);
+                itemNr++;
             }
+            Console.WriteLine();
         }
 
         public void InspectItem(string item)

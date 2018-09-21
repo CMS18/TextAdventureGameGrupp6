@@ -10,8 +10,8 @@ namespace TextAdventure
     {
         static void Main(string[] args)
         {
-            // skapa spelobjekt 
-            // kör igång spelet
+            Game game = new Game();
+            game.PlayingGame();
         }
     }
 }

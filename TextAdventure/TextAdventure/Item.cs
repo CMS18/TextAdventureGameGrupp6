@@ -17,11 +17,9 @@ namespace TextAdventure
 
         }
 
-        public void Use()
+        public void Use(string itemOne, string itemTwo)
         {
             throw new NotImplementedException();
         }
-        
-
     }
 }

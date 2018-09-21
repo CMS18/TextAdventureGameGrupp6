@@ -10,7 +10,8 @@ namespace TextAdventure
     public class Game
     {
         public Player player;
-        public Dictionary<string, Room> roomList;
+        public Dictionary<string, Room> roomCollection;
+        public TextHandler th = new TextHandler();
 
         public Game()
         {
@@ -19,12 +20,24 @@ namespace TextAdventure
 
         public void NewGame()
         {
-            throw new NotImplementedException();
+            WorldBuilder wb = new WorldBuilder();
+            wb.CreateItems();
+            wb.CreateRooms();
         }
 
         public void PlayingGame()
         {
-            throw new NotImplementedException();
+            NewGame();
+            player.currentLocation = roomCollection["START"];
+            Console.WriteLine("Welcome to Pork. A simple text adventure game made for simple people.");
+            bool stillPlaying = true;
+            while (stillPlaying)
+            {
+                player.currentLocation.Look();
+                th.CheckText();
+
+                break;
+            }
         }
 
         public void Move()

@@ -29,25 +29,6 @@ namespace TextAdventure
             items.Add("SWORD");
             CreateRoom("NORTH", "To the north of the house, around the room you see a table and a door.", items);
 
-            /*Room westRoom = new Room();
-            startRoom.roomDescription = "";
-            startRoom.roomInventory.Add("", itemCollection[""]);
-            startRoom.roomInventory.Add("", itemCollection[""]);
-            roomCollection.Add("WEST", westRoom);
-
-            Room eastRoom = new Room();
-            startRoom.roomDescription = "";
-            startRoom.roomInventory.Add("", itemCollection[""]);
-            startRoom.roomInventory.Add("", itemCollection[""]);
-            roomCollection.Add("EAST", eastRoom);
-
-            Room southRoom = new Room();
-            startRoom.roomDescription = "";
-            startRoom.roomInventory.Add("", itemCollection[""]);
-            startRoom.roomInventory.Add("", itemCollection[""]);
-            roomCollection.Add("SOUTH", southRoom);*/
-
-
         }
 
         public void CreateRoom(string name, string roomDesc, List<string> items)
@@ -65,9 +46,7 @@ namespace TextAdventure
         {
             CreateItem("CANDYBAR", "It looks tasty.", "There's a candybar lying all alone on the floor.");
             CreateItem("GAMEGUIDE", "Valid commands are Go, Use, Take, Drop, Inspect and Look.", "An old and dusty guide for some game long forgotten is lying here.");
-
             
-
         }
 
         public void CreateItem(string name, string invDesc, string roomInvDesc)

@@ -48,7 +48,8 @@ namespace TextAdventure
         public void CreateItems()
         {
             CreateItem("CANDYBAR", "It looks tasty.", "There's a candybar lying all alone on the floor.");
-            CreateItem("GAMEGUIDE", "Valid commands are Go, Use, Take, Drop, Inspect and Look.", "An old and dusty guide for some game long forgotten is lying here.");
+            CreateItem("GAMEGUIDE", "Valid co" +
+                                    "mmands are Go, Use, Take, Drop, Inspect and Look.", "An old and dusty guide for some game long forgotten is lying here.");
             CreateItem("KEY", "", "");
             CreateItem("SWORD", "", "");
             

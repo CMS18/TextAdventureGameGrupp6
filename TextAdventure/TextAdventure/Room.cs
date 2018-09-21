@@ -12,6 +12,18 @@ namespace TextAdventure
         public string roomDescription;
         public Dictionary<string, Item> roomInventory;
 
+        public Room()
+        {
+
+        }
+
+        public Room(string name, string roomDescription, Dictionary<string,Item> roomInventory)
+        {
+            this.name = name;
+            this.roomDescription = roomDescription;
+            this.roomInventory = roomInventory;
+        }
+
         public void Look()
         {
             throw new NotImplementedException();

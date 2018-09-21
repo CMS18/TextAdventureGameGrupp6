@@ -12,6 +12,11 @@ namespace TextAdventure
         public Dictionary<string, Room> roomCollection;
         public Dictionary<string, Item> itemCollection;
 
+        public WorldBuilder()
+        {
+
+        }
+
         public void CreateRooms()
         {
             List<string> items = new List<string>();

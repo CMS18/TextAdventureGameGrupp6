@@ -9,10 +9,8 @@ namespace TextAdventure
     public class Item
     {
         public string name;
-        public Dictionary<string, string> description;
-
-
-
+        public Dictionary<string, string> itemDescription;
+        
         public void Use()
         {
             throw new NotImplementedException();

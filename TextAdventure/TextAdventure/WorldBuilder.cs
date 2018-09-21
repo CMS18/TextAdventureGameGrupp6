@@ -8,7 +8,8 @@ namespace TextAdventure
 {
     public class WorldBuilder
     {
+        public Dictionary<string, Room> roomList;
 
-            // Lista med room, skapa rum och items
+        // Lista med room, skapa rum och items
     }
 }

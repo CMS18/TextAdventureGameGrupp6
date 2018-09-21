@@ -8,7 +8,14 @@ namespace TextAdventure
 {
     public class Room
     {
-        // Beskrivningar, Room Inventory
-        // Look, Inspect
+        public string name;
+        public string roomDescription;
+        public Dictionary<string, Item> roomInventory;
+
+        public void InspectRoom()
+        {
+            throw new NotImplementedException();
+        }
+        
     }
 }

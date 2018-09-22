@@ -163,7 +163,21 @@ namespace TextAdventure
             {
                 if(userInput.Length > 1)
                 {
-                    //Use(userInput[1], userInput[3]);
+                    if (player.playerInventory.ContainsKey(userInput[1]))
+                    {
+                        if (player.currentLocation.roomInventory.ContainsKey(userInput[3]))
+                        {
+                            //Use(userInput[1], userInput[3]);
+                        }
+                        else if (player.playerInventory.ContainsKey(userInput[3]))
+                        {
+                            //Use(userInput[1], userInput[3]);
+                        }
+                        else
+                        {
+                            //Use(userInput[1]);
+                        }
+                    }
                 }
                 else
                 {
@@ -238,6 +252,10 @@ namespace TextAdventure
             else if(userInput[0].Equals("INVENTORY") || userInput[0].Equals("INV"))
             {
                 player.ShowInventory();
+            }
+            else if (userInput[0].Equals("EXIT") || userInput[0].Equals("QUIT"))
+            {
+                Environment.Exit(0);
             }
             else
             {

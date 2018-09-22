@@ -26,6 +26,11 @@ namespace TextAdventure
             ID = itemID;
         }
 
+        public void Use(string item)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Use(string itemOne, string itemTwo)
         {
             throw new NotImplementedException();

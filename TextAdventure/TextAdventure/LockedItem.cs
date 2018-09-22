@@ -14,7 +14,6 @@ namespace TextAdventure
             : base(name, playerInventoryDesc, roomInventoryDesc, ID, small)
         {
             status = locked;
-            
         }
     }
 }

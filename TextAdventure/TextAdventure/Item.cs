@@ -12,17 +12,27 @@ namespace TextAdventure
         public string playerInventoryDesc;
         public string roomInventoryDesc;
         public string ID;
+        public bool pickUpAble;
 
         public Item()
         {
         }
 
-        public Item(string itemName, string playerInvDesc, string roomInvDesc, string itemID)
+        public Item(string itemName, string playerInvDesc, string roomInvDesc, string itemID, bool small)
         {
             name = itemName;
             playerInventoryDesc = playerInvDesc;
             roomInventoryDesc = roomInvDesc;
             ID = itemID;
+            pickUpAble = small;
+        }
+
+        public Item(string itemName, string playerInvDesc, string roomInvDesc, bool small)
+        {
+            name = itemName;
+            playerInventoryDesc = playerInvDesc;
+            roomInventoryDesc = roomInvDesc;
+            pickUpAble = small;
         }
 
         public void Use(string item)

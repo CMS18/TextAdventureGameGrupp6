@@ -30,6 +30,7 @@ namespace TextAdventure
             items.Clear();
             items.Add("KEY");
             items.Add("SWORD");
+            items.Add("DOOR");
             CreateRoom("NORTH", "You entered the northern room. SHIT, that nasty girl from the Grudge is here. Her" +
                                 "black eyes are staring right through your soul.. ", items);
 
@@ -41,7 +42,7 @@ namespace TextAdventure
 
             items.Clear();
             items.Add("TOOTHBRUSH");
-            items.Add("ORANGEJUICE");
+            items.Add("GLASS");
             CreateRoom("WEST", "You entered the western room. Clint Eastwood has gone mental and is " +
                                "lying in bed watching Teletubbies. ", items);
 
@@ -50,11 +51,12 @@ namespace TextAdventure
             items.Add("RAT");
             CreateRoom("EAST", "You entered the eastern room. Is that??!! Oh shit, Chuck Norris is here, " +
                                 "trying to build a rocket with a chewing gum and a pencil. Classic Chuck. ", items);
-
+            /*
             items.Clear();
             items.Add("");
             items.Add("");
             CreateRoom("EXIT", "Room DESC", items);
+            */
 
             return roomCollection;
 
@@ -73,7 +75,7 @@ namespace TextAdventure
 
         public Dictionary<string, Item> CreateItems()
         {
-            CreateItem("CANDYBAR", "It looks tasty.", "There's a candybar lying all alone on the floor.");
+            CreateItem("CANDYBAR", "It looks tasty.", "There's a candybar lying all alone on the floor.", "0002", true);
             CreateItem("GAMEGUIDE", "Valid commands are Go, Use, Take, Drop, Inspect and Look.", 
                 "An old and dusty guide for some game long forgotten is lying here.", true);
             CreateItem("KEY", "A golden key", "A small golden object is radiating in the dark.", "0001", true);
@@ -82,7 +84,7 @@ namespace TextAdventure
             CreateItem("DEODORANT", "If you smell shit, use it", "A deodorant is lying just beneath your feet", true);
             CreateItem("TOOTHBRUSH", "A used toothbrush, barely any straws are left on it.", "Old and used toothbrush.", true);
             CreateItem("GLASS", "Some kind of bewerage with orange color.", "Glass containing some kind of bewerage.", true);
-            CreateItem("LÖSSNUSS", "A container with a text Prima Fint", "A round box of some sort", true);
+            CreateItem("CONTAINER", "A container with a text Prima Fint", "A round box of some sort", true);
             CreateItem("RAT", "Oh shit, it was dead", "A disgusting albino rat with human eyes", true);
             CreateLockedItem("DOOR", "", "A sturdy looking door, it seems locked. I can hear birds chirping on the other side of it.", "0001", false, false);
             return itemCollection;
@@ -95,12 +97,15 @@ namespace TextAdventure
             itemCollection.Add(item.name, item);
         }
 
-        public void CreateItem(string name, string invDesc, string roomInvDesc)
+        public void CreateItem(string name, string invDesc, string roomInvDesc, string ID, bool small)
         {
-            Item item = new Item();
-            item.name = name;
-            item.playerInventoryDesc = invDesc;
-            item.roomInventoryDesc = roomInvDesc;
+            Item item = new Item(name, invDesc, roomInvDesc, ID, small);
+            itemCollection.Add(item.name, item);
+        }
+        
+        public void CreateItem(string name, string invDesc, string roomInvDesc, bool small)
+        {
+            Item item = new Item(name, invDesc, roomInvDesc, small);
             itemCollection.Add(item.name, item);
         }
 

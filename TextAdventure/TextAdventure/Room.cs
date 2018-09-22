@@ -31,7 +31,7 @@ namespace TextAdventure
             for (int i = 0; i < roomInventory.Count; i++)
             {
                 Item tempItem = roomInventory[keys[i]];
-                Console.Write(tempItem.roomInvectoryDesc + " ");
+                Console.Write(tempItem.roomInventoryDesc + " ");
             }
             Console.WriteLine();
             Console.WriteLine();
@@ -41,7 +41,7 @@ namespace TextAdventure
         public void InspectItem(string itemToInsp)
         {
             Item tempItem = roomInventory[itemToInsp];
-            Console.WriteLine(tempItem.roomInvectoryDesc);
+            Console.WriteLine(tempItem.roomInventoryDesc);
             Console.WriteLine();
         }
         

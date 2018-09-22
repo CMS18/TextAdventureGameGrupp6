@@ -16,6 +16,7 @@ namespace TextAdventure
         {
             roomCollection = new Dictionary<string, Room>();
             itemCollection = new Dictionary<string, Item>();
+
         }
 
         public Dictionary<string, Room> CreateRooms()
@@ -75,15 +76,16 @@ namespace TextAdventure
         {
             CreateItem("CANDYBAR", "It looks tasty.", "There's a candybar lying all alone on the floor.", "0002", true);
             CreateItem("GAMEGUIDE", "Valid commands are Go, Use, Take, Drop, Inspect and Look.", 
-                "An old and dusty guide for some game long forgotten is lying here.");
-            CreateItem("KEY", "A golden key", "A small golden object is radiating in the dark.");
-            CreateItem("SWORD", "Sharp sword.", "A sword is stuck on the ground.");
-            CreateItem("DAGGER", "A rusty old dagger", "There's a rusty old dagger lying here");
-            CreateItem("DEODORANT", "If you smell shit, use it", "A deodorant is lying just beneath your feet");
-            CreateItem("TOOTHBRUSH", "A used toothbrush, barely any straws are left on it.", "Old and used toothbrush.");
-            CreateItem("GLASS", "Some kind of bewerage with orange color.", "Glass containing some kind of bewerage.");
-            CreateItem("LÖSSNUSS", "A container with a text Prima Fint", "A round box of some sort");
-            CreateItem("RAT", "Oh shit, it was dead", "A disgusting albino rat with human eyes");
+                "An old and dusty guide for some game long forgotten is lying here.", true);
+            CreateItem("KEY", "A golden key", "A small golden object is radiating in the dark.", "0001", true);
+            CreateItem("SWORD", "Sharp sword.", "A sword is stuck on the ground.", true);
+            CreateItem("DAGGER", "A rusty old dagger", "There's a rusty old dagger lying here", true);
+            CreateItem("DEODORANT", "If you smell shit, use it", "A deodorant is lying just beneath your feet", true);
+            CreateItem("TOOTHBRUSH", "A used toothbrush, barely any straws are left on it.", "Old and used toothbrush.", true);
+            CreateItem("GLASS", "Some kind of bewerage with orange color.", "Glass containing some kind of bewerage.", true);
+            CreateItem("LÖSSNUSS", "A container with a text Prima Fint", "A round box of some sort", true);
+            CreateItem("RAT", "Oh shit, it was dead", "A disgusting albino rat with human eyes", true);
+            CreateLockedItem("DOOR", "", "A sturdy looking door, it seems locked. I can hear birds chirping on the other side of it.", "0001", false, false);
             return itemCollection;
             
         }

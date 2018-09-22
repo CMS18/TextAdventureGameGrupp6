@@ -16,7 +16,6 @@ namespace TextAdventure
 
         public Item()
         {
-            
         }
 
         public Item(string itemName, string playerInvDesc, string roomInvDesc, bool smallItem)

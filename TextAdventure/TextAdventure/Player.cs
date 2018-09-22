@@ -70,6 +70,7 @@ namespace TextAdventure
                 Console.WriteLine();
                 Console.ReadKey();
                 Environment.Exit(0);
+
             }
         }
 

@@ -17,7 +17,6 @@ namespace TextAdventure
         public string[] userInput;
         public int xCoord = 1;
         public int yCoord = 1;
-        public bool victory = false;
 
         public Game()
         {
@@ -62,30 +61,6 @@ namespace TextAdventure
                 CheckText();
 
                 //break;
-            }
-        }
-
-        public void Win()
-        {
-            if (victory)
-            {
-                Console.WriteLine("Do you want to play again?");
-                Console.Write("(YES/NO):");
-                string input = Console.ReadLine().ToUpper();
-
-                if (!input.Equals("YES"))
-                {
-                    if (input.Equals("NO"))
-                    {
-                        Environment.Exit(0);
-                    }
-                    else
-                    {
-                        Console.WriteLine("Please control your writing.");
-                    }
-                }
-                NewGame();
-                
             }
         }
 
@@ -190,22 +165,18 @@ namespace TextAdventure
                 {
                     if (player.playerInventory.ContainsKey(userInput[1]))
                     {
-                        if(userInput.Length == 2)
+                        if (player.currentLocation.roomInventory.ContainsKey(userInput[3]))
                         {
-                            player.Use(userInput[1]);
-                        }
-                        else if (player.currentLocation.roomInventory.ContainsKey(userInput[3]))
-                        {
-                            player.UseOnRoomItem(userInput[1], userInput[3]);
+                            //Use(userInput[1], userInput[3]);
                         }
                         else if (player.playerInventory.ContainsKey(userInput[3]))
                         {
-                            player.UseOnInvItem(userInput[1], userInput[3]);
+                            //Use(userInput[1], userInput[3]);
                         }
-                    }
-                    if (player.currentLocation.roomInventory.ContainsKey(userInput[1]))
-                    {
-                        player.UseSomethingInRoom(userInput[1]);
+                        else
+                        {
+                            //Use(userInput[1]);
+                        }
                     }
                 }
                 else
@@ -219,7 +190,6 @@ namespace TextAdventure
             {
                 if (userInput.Length > 1)
                 {
-                    
                     if (player.currentLocation.roomInventory.ContainsKey(userInput[1]))
                     {
                         player.PickItem(userInput[1]);

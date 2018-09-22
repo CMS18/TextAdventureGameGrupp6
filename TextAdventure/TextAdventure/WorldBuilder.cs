@@ -56,6 +56,12 @@ namespace TextAdventure
             
         }
 
+        public void CreateLockedItem(string name, string invDesc, string roomInvDesc, string ID, bool locked, bool small)
+        {
+            LockedItem item = new LockedItem(name, invDesc, roomInvDesc, ID, locked, small);
+            itemCollection.Add(item.name, item);
+        }
+
         public void CreateItem(string name, string invDesc, string roomInvDesc)
         {
             Item item = new Item();

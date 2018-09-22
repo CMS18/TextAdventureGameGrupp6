@@ -28,11 +28,14 @@ namespace TextAdventure
 
         public void Use(string item)
         {
+            //If the item is usable, use it.
             throw new NotImplementedException();
         }
 
         public void Use(string itemOne, string itemTwo)
         {
+            //Check if the second item is in the player inventory or if it's in the room/find where the items are located.
+            //If the two items can be used together, use them.
             throw new NotImplementedException();
         }
     }

@@ -10,7 +10,7 @@ namespace TextAdventure
 {
     public class Player
     {
-        public string playerName { get { return playerName; } set { playerName = value; } }
+        public string playerName;
         public Dictionary<string, Item> playerInventory;
         public Room currentLocation;
         //public Item description;
@@ -49,6 +49,7 @@ namespace TextAdventure
         {
             Item tempItem = playerInventory[item];
             Console.WriteLine(tempItem.playerInventoryDesc);
+            Console.WriteLine();
         }
     }
 }

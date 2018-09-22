@@ -9,13 +9,12 @@ namespace TextAdventure
     class LockedItem : Item
     {
         public bool status;
-        public bool pickupAble;
 
-        public LockedItem(string name, string playerInventoryDesc, string roomInventoryDesc, string ID, bool locked, bool small) 
-            : base(name, playerInventoryDesc, roomInventoryDesc, ID)
+        public LockedItem(string name, string playerInventoryDesc, string roomInventoryDesc, string ID, bool small, bool locked) 
+            : base(name, playerInventoryDesc, roomInventoryDesc, ID, small)
         {
             status = locked;
-            pickupAble = small;
+            
         }
     }
 }

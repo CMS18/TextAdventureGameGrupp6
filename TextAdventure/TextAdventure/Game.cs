@@ -68,7 +68,7 @@ namespace TextAdventure
                 Console.WriteLine("You can't go in the " + direction + " direction.");
                 Console.WriteLine();
             }       
-            else if (direction.Equals("NORTH"))
+            else if (direction.Equals("NORTH")) 
             {
                 if(xCoord == 0 || xCoord == 2)
                 {

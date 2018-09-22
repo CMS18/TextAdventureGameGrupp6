@@ -34,6 +34,7 @@ namespace TextAdventure
                 Console.Write(tempItem.roomInvectoryDesc + " ");
             }
             Console.WriteLine();
+            Console.WriteLine();
 
         }
 

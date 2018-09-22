@@ -29,7 +29,7 @@ namespace TextAdventure
             items.Clear();
             items.Add("KEY");
             items.Add("SWORD");
-            CreateRoom("NORTH", "You entered the northern room. SHIT, that nasty girl from the Grudge is here. Her" +
+            CreateRoom("NORTH", "You entered the northern room. SHIT, that nasty girl from The Grudge is here. Her " +
                                 "black eyes are staring right through your soul.. ", items);
 
             items.Clear();
@@ -41,8 +41,8 @@ namespace TextAdventure
             items.Clear();
             items.Add("TOOTHBRUSH");
             items.Add("GLASS");
-            CreateRoom("WEST", "You entered the western room. Clint Eastwood has gone mental and is " +
-                               "lying in bed watching Teletubbies. ", items);
+            CreateRoom("WEST", "You entered the western room. What the heck, Clint Eastwood is here!? He's gone mental and is " +
+                               "lying in bed watching Teletubbies.", items);
 
             items.Clear();
             items.Add("CONTAINER");

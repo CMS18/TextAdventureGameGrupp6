@@ -30,7 +30,6 @@ namespace TextAdventure
             items.Clear();
             items.Add("KEY");
             items.Add("SWORD");
-            items.Add("DOOR");
             CreateRoom("NORTH", "You entered the northern room. SHIT, that nasty girl from the Grudge is here. Her" +
                                 "black eyes are staring right through your soul.. ", items);
 
@@ -74,7 +73,7 @@ namespace TextAdventure
 
         public Dictionary<string, Item> CreateItems()
         {
-            CreateItem("CANDYBAR", "It looks tasty.", "There's a candybar lying all alone on the floor.", "0002", true);
+            CreateItem("CANDYBAR", "It looks tasty.", "There's a candybar lying all alone on the floor.");
             CreateItem("GAMEGUIDE", "Valid commands are Go, Use, Take, Drop, Inspect and Look.", 
                 "An old and dusty guide for some game long forgotten is lying here.", true);
             CreateItem("KEY", "A golden key", "A small golden object is radiating in the dark.", "0001", true);
@@ -90,24 +89,20 @@ namespace TextAdventure
             
         }
 
-        public void CreateLockedItem(string name, string invDesc, string roomInvDesc, string ID, bool open, bool small)
+        public void CreateLockedItem(string name, string invDesc, string roomInvDesc, string ID, bool locked, bool small)
         {
-            LockedItem item = new LockedItem(name, invDesc, roomInvDesc, ID, open, small);
+            LockedItem item = new LockedItem(name, invDesc, roomInvDesc, ID, locked, small);
             itemCollection.Add(item.name, item);
         }
 
-        public void CreateItem(string name, string invDesc, string roomInvDesc, bool smallItem)
+        public void CreateItem(string name, string invDesc, string roomInvDesc)
         {
-            Item item = new Item(name, invDesc, roomInvDesc, smallItem);
+            Item item = new Item();
+            item.name = name;
+            item.playerInventoryDesc = invDesc;
+            item.roomInventoryDesc = roomInvDesc;
             itemCollection.Add(item.name, item);
         }
-        
-        public void CreateItem(string name, string invDesc, string roomInvDesc, string ID, bool smallItem)
-        {
-            Item item = new Item(name, invDesc, roomInvDesc, ID, smallItem);
-            itemCollection.Add(item.name, item);
-        }
-        
 
     }
 }

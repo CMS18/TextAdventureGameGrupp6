@@ -61,7 +61,7 @@ namespace TextAdventure
             Item item = new Item();
             item.name = name;
             item.playerInventoryDesc = invDesc;
-            item.roomInvectoryDesc = roomInvDesc;
+            item.roomInventoryDesc = roomInvDesc;
             itemCollection.Add(item.name, item);
         }
 

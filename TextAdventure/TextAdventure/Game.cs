@@ -182,7 +182,7 @@ namespace TextAdventure
                     }
                     else
                     {
-                        Console.WriteLine("What are you on about?" + userInput[1] + " doesn't even exist!");
+                        Console.WriteLine("What are you on about? " + userInput[1] + " doesn't even exist!");
                         Console.WriteLine();
                     }
                 }

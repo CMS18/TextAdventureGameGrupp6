@@ -10,11 +10,20 @@ namespace TextAdventure
     {
         public string name;
         public string playerInventoryDesc;
-        public string roomInvectoryDesc;
+        public string roomInventoryDesc;
+        public string ID;
 
         public Item()
         {
             
+        }
+
+        public Item(string itemName, string playerInvDesc, string roomInvDesc, string itemID)
+        {
+            name = itemName;
+            playerInventoryDesc = playerInvDesc;
+            roomInventoryDesc = roomInvDesc;
+            ID = itemID;
         }
 
         public void Use(string itemOne, string itemTwo)

@@ -48,10 +48,9 @@ namespace TextAdventure
         public Dictionary<string, Item> CreateItems()
         {
             CreateItem("CANDYBAR", "It looks tasty.", "There's a candybar lying all alone on the floor.");
-            CreateItem("GAMEGUIDE", "Valid co" +
-                                    "Commands are Go, Use, Take, Drop, Inspect and Look.", "An old and dusty guide for some game long forgotten is lying here.");
-            CreateItem("KEY", "", "");
-            CreateItem("SWORD", "", "");
+            CreateItem("GAMEGUIDE", "Valid commands are Go, Use, Take, Drop, Inspect and Look.", "An old and dusty guide for some game long forgotten is lying here.");
+            CreateItem("KEY", "A golden key", "A small golden object is radiating in the dark.");
+            CreateItem("SWORD", "Sharp sword.", "A sword is stuck on the ground.");
 
             return itemCollection;
             

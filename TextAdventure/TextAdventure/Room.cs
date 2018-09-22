@@ -26,14 +26,14 @@ namespace TextAdventure
 
         public void Look()
         {
-            Console.Write(roomDescription + " ");
+            Console.WriteLine(roomDescription);
             List<string> keys = new List<string>(roomInventory.Keys);
             for (int i = 0; i < roomInventory.Count; i++)
             {
                 Item tempItem = roomInventory[keys[i]];
-                
                 Console.Write(tempItem.roomInvectoryDesc + " ");
             }
+            Console.WriteLine();
 
         }
 
@@ -41,6 +41,7 @@ namespace TextAdventure
         {
             Item tempItem = roomInventory[itemToInsp];
             Console.WriteLine(tempItem.roomInvectoryDesc);
+            Console.WriteLine();
         }
         
     }

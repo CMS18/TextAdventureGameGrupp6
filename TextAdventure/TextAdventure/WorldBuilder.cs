@@ -90,7 +90,7 @@ namespace TextAdventure
             CreateItem("DEODORANT", "If you smell shit, use it.", "A deodorant is lying just beneath your feet.", "930", true);
             CreateItem("SKÅNING", "", "As crazy as they come. This Skåning is batshit crazy. I wonder why?", "8008", false);
             CreateItem("TOOTHBRUSH", "A used toothbrush, barely any straws are left on it.", "Old and used toothbrush.", "1001", true);
-            CreateItem("GLASS", "Some kind of bewerage with orange color.", "Glass containing some kind of bewerage.", true);
+            CreateItem("GLASS", "Some kind of bewerage with orange color.", "Glass containing some kind of bewerage.", "03", true);
             CreateItem("CLINT", "", "Clint gives you a quick stare before turning his head back to the TV.", "1000" , false);
             CreateItem("POSTER", "A movie poster, Clint Eastwood is the star of the movie.", "A poster hanging on the left side of the room. The good, the bad and the ugly's movie cover is printed on it. ", "1000", true);
             CreateItem("CONTAINER", "A container with a text Prima Fint Snus.", "A round container with some text written on it.", "8008", true);

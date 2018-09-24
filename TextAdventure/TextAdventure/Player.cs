@@ -117,7 +117,7 @@ namespace TextAdventure
                                       " **KEY ADDED TO INVENTORY**");
                     Console.WriteLine();
                     playerInventory.Remove(useItem.name);
-                    Item key = new Item("KEY", "A key, wonder where it leads to?", "A small key lying on the floor", "1200", true);
+                    Item key = new Item("KEY", "A key, wonder where it leads to?", "A small key lying on the floor ", "1200", true);
                     playerInventory.Add(key.name, key);
                 }
                 
@@ -143,9 +143,9 @@ namespace TextAdventure
                     Console.WriteLine("The lockbox is now open. Inside it lies a lockpick. **LOCKPICK ADDED TO INVENTORY**");
                     Console.WriteLine();
                     playerInventory.Remove(itemTwo);
-                    Item openLB = new Item("LOCKBOX", "Opened lockbox, it's empty.", "Opened lockbox thrown on the floor.", "051", true);
+                    Item openLB = new Item("LOCKBOX", "Opened lockbox, it's empty.", "Opened lockbox thrown on the floor. ", "051", true);
                     playerInventory.Add(openLB.name, openLB);
-                    Item lockpick = new Item("LOCKPICK", "Used for opening locked things.", "A slim looking lockpick lying on the dusty floor.", "1230", true);
+                    Item lockpick = new Item("LOCKPICK", "Used for opening locked things.", "A slim looking lockpick lying on the dusty floor. ", "1230", true);
                     playerInventory.Add(lockpick.name, lockpick);
                 }
             }
@@ -170,7 +170,7 @@ namespace TextAdventure
                     Console.WriteLine("The door is now open.");
                     Console.WriteLine();
                     currentLocation.roomInventory.Remove(secondItem.name);
-                    Item newDoor = new Item("DOOR", "", "The closed door is now open. Should I make a run for it?", "1337", false);
+                    Item newDoor = new Item("DOOR", "", "The closed door is now open. Should I make a run for it? ", "1337", false);
                     currentLocation.roomInventory.Add(newDoor.name, newDoor);
                     
                 }
@@ -179,9 +179,9 @@ namespace TextAdventure
                     Console.WriteLine("The lockbox is now open. Inside it lies a lockpick. You store it in your inventory.");
                     Console.WriteLine();
                     playerInventory.Remove(itemTwo);
-                    Item openLB = new Item("LOCKBOX", "Opened lockbox, it's empty.", "Opened lockbox thrown on the floor.", "051", true);
+                    Item openLB = new Item("LOCKBOX", "Opened lockbox, it's empty.", "Opened lockbox thrown on the floor. ", "051", true);
                     playerInventory.Add(openLB.name, openLB);
-                    Item lockpick = new Item("LOCKPICK", "Used for opening locked things.", "A slim looking lockpick lying on the dusty floor.", "1230", true);
+                    Item lockpick = new Item("LOCKPICK", "Used for opening locked things.", "A slim looking lockpick lying on the dusty floor. ", "1230", true);
                     playerInventory.Add(lockpick.name, lockpick);
                 }
                 else if (secondItem.name.Equals("CLINT"))

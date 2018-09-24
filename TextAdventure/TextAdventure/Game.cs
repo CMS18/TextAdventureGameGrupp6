@@ -53,10 +53,10 @@ namespace TextAdventure
             Console.WriteLine(@" |        | | |__/ /      \\ //     | |______  | |    \\ | |      | |       \\    //  |  | \\  | |______");
             Console.WriteLine(@" |___||___| |_____/        \\/      |________| |_|     \\|_|      |_|        \\__//   |__|  \\ |________|");
             Console.WriteLine();
-            Console.WriteLine("Welcome to Pork. A simple text adventure game made for simple people.");
+            Console.WriteLine("                  WELCOME TO PORK. A SIMPLE TEXT ADVENTURE GAME MADE FOR SIMPLE PEOPLE.                   ");
             Console.WriteLine();
-            Console.WriteLine("What is your epic gamertag?");
             Console.WriteLine();
+            Console.Write("What is your epic gamertag?  ");
             player.playerName = Console.ReadLine();
             Console.WriteLine();
             player.currentLocation.Look();

@@ -90,7 +90,7 @@ namespace TextAdventure
                 Console.WriteLine(@"     |_____|_/_\_|                                  ");
                 Console.WriteLine(@"                  Made by: Gabriel, Max and Robert.T");
                 Console.WriteLine("                                                     ");
-                Console.WriteLine("You made it! VICTORY IS YOURS!                       ");
+                Console.WriteLine("      ******You made it! VICTORY IS YOURS!******     ");
                 Console.WriteLine();
                 Console.ReadKey();
                 Environment.Exit(0);

@@ -44,7 +44,7 @@ namespace TextAdventure
 
             items.Clear();
             items.Add("TOOTHBRUSH");
-            items.Add("GLASS");
+            //items.Add("GLASS");
             items.Add("CLINT");
             items.Add("POSTER");
             CreateRoom("WEST", "You entered the western room. Clint Eastwood has gone mental and is " +

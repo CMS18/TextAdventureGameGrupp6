@@ -206,7 +206,7 @@ namespace TextAdventure
                 if (secondItem.name.Equals("SKÅNING"))
                 {
                     Console.WriteLine("Skåningen realizes slowly what's in your hand and strikes faster than a Cheetah, grabbing the container and stuffing everything in it up his mouth.");
-                    Console.WriteLine("SATAN VA SNUS! The skåning shouts as his teeth are completely covered with the dark powder.");
+                    Console.WriteLine("Bedst at udstå, hvad man ikke kan undgå, ålahue! The skåning shouts as his teeth are completely covered with the dark powder.");
                     Console.WriteLine();
                     playerInventory.Remove(itemOne);
                 }

@@ -45,6 +45,13 @@ namespace TextAdventure
         {
             NewGame();
             player.currentLocation = roomCollection["START"];
+            Console.WriteLine(@"    ____     _____    _           _  _______    _         _   ___________   _      _   _____    _______ ");
+            Console.WriteLine(@"  /      \  |  __  \  \\         // |  _____|  | |\\     | | |____   ____| | |    | | |   _ \\ |  _____|");
+            Console.WriteLine(@" |   /\   | | |  \  \  \\       //  | |____    | | \\    | |      | |      | |    | | |  | ||| | |____  ");
+            Console.WriteLine(@" |  |__|  | | |   | |   \\     //   |  ____|   | |  \\   | |      | |      | |    | | |   __// |  ____| ");
+            Console.WriteLine(@" |        | | |   | |    \\   //    | |        | |   \\  | |      | |      | |    | | |  |\\   | |      ");
+            Console.WriteLine(@" |        | | |__/ /      \\ //     | |______  | |    \\ | |      | |       \\    //  |  | \\  | |______");
+            Console.WriteLine(@" |___||___| |_____/        \\/      |________| |_|     \\|_|      |_|        \\__//   |__|  \\ |________|");
             Console.WriteLine();
             Console.WriteLine("Welcome to Pork. A simple text adventure game made for simple people.");
             Console.WriteLine();

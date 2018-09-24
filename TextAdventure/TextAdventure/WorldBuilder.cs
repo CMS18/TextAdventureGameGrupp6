@@ -51,7 +51,8 @@ namespace TextAdventure
             items.Add("CONTAINER");
             items.Add("RAT");
             CreateRoom("EAST", "You entered the eastern room. Is that??!! Oh shit, Chuck Norris is here, " +
-                                "trying to build a rocket with a chewing gum and a pencil. Classic Chuck. ", items);
+                               "AND SWEET MOTHER MCCRAREY, MacGyver is here too! \nThey have teamed up, " +
+                                "trying to build a rocket with a chewing gum and a pencil. Classic Chuck and Mr.M.", items);
 
             return roomCollection;
 

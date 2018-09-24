@@ -135,7 +135,7 @@ namespace TextAdventure
                     Console.WriteLine("The lockbox is now open. Inside it lies a lockpick. **LOCKPICK ADDED TO INVENTORY**");
                     Console.WriteLine();
                     playerInventory.Remove(itemTwo);
-                    Item openLB = new Item("LOCKBOX", "Opened lockbox, it's empty.", "Opened lockbox thrown on the floor.", true);
+                    Item openLB = new Item("LOCKBOX", "Opened lockbox, it's empty.", "Opened lockbox thrown on the floor.", "051", true);
                     playerInventory.Add(openLB.name, openLB);
                     Item lockpick = new Item("LOCKPICK", "Used for opening locked things.", "A slim looking lockpick lying on the dusty floor.", "1230", true);
                     playerInventory.Add(lockpick.name, lockpick);

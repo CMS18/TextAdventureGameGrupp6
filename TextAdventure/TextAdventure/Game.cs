@@ -192,13 +192,23 @@ namespace TextAdventure
                         {
                             player.Use(userInput[1]);
                         }
-                        else if (player.currentLocation.roomInventory.ContainsKey(userInput[3]))
+                        else if(userInput.Length == 3)
+                        {
+                            Console.WriteLine("Please be a little more precise... USE <ITEM> ON <ITEM>..");
+                            Console.WriteLine();
+                        }
+                        else if (player.currentLocation.roomInventory.ContainsKey(userInput[3]) && userInput[2].Equals("ON"))
                         {
                             player.UseOnRoomItem(userInput[1], userInput[3]);
                         }
-                        else if (player.playerInventory.ContainsKey(userInput[3]))
+                        else if (player.playerInventory.ContainsKey(userInput[3]) && userInput[2].Equals("ON"))
                         {
                             player.UseOnInvItem(userInput[1], userInput[3]);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Do you speak the english language? USE <ITEM> ON <ITEM>!");
+                            Console.WriteLine();
                         }
                     }
                     if (player.currentLocation.roomInventory.ContainsKey(userInput[1]))

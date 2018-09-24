@@ -32,11 +32,14 @@ namespace TextAdventure
         {
             if (currentLocation.roomInventory[item].pickUpAble)
             {
-                if (item.Equals("POSTER"))
+                //&& ID is correct "1000"
+                if (item.Equals("POSTER") && currentLocation.roomInventory[item].ID.Equals("1000"))
                 {
                     Console.WriteLine("Behind the poster is a secret stash. A small lockbox is lying here.");
                     Console.WriteLine();
-                    playerInventory.Add(item, currentLocation.roomInventory[item]);
+                    Item poster = new Item("POSTER", "A movie poster, Clint Eastwood is the star of the movie.", "A poster hanging on the left side of the room. The good, the bad and the uglys movie cover is printed on it. ", "1009", true);
+                    currentLocation.roomInventory.Remove(item);
+                    playerInventory.Add(poster.name, poster);
                     currentLocation.roomInventory.Remove(item);
                     Item lockbox = new Item("LOCKBOX", "A small locked lockbox", "With the poster gone there's now a small lockbox standing in the hidden area the poster was covering.", "1200", true);
                     currentLocation.roomInventory.Add(lockbox.name, lockbox);
@@ -193,7 +196,7 @@ namespace TextAdventure
                 }
                 if (secondItem.name.Equals("SKÅNING"))
                 {
-                    Console.WriteLine("Skåningen realizes slowly what's in your hand and strikes faster than a Cheetah, grabbing the container and stuffing everything in it up in his mouth.");
+                    Console.WriteLine("Skåningen realizes slowly what's in your hand and strikes faster than a Cheetah, grabbing the container and stuffing everything in it up his mouth.");
                     Console.WriteLine("SATAN VA SNUS! The skåning shouts as his teeth are completely covered with the dark powder.");
                     Console.WriteLine();
                     playerInventory.Remove(itemOne);

@@ -29,11 +29,19 @@ namespace TextAdventure
         {
             Console.WriteLine(roomDescription);
             List<string> keys = new List<string>(roomInventory.Keys);
+            int words = 0;
+            
             for (int i = 0; i < roomInventory.Count; i++)
             {
+                if(words == 2)
+                {
+                    Console.Write("\r\n");
+                }
                 Item tempItem = roomInventory[keys[i]];
                 Console.Write(tempItem.roomInventoryDesc + " ");
+                words++;
             }
+            
             Console.WriteLine();
             Console.WriteLine();
 

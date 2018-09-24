@@ -96,7 +96,7 @@ namespace TextAdventure
             CreateItem("CONTAINER", "A container with a text Prima Fint Snus.", "A round container with some text written on it.", "8008", true);
             CreateItem("RAT", "", "A disgusting albino rat with human eyes.", "05", false);
             CreateItem("CHUCK", "", "You suddenly feel alot better knowing that Chuck is here to save the day. But what is he doing here?", "1001" , false);
-            CreateLockedItem("DOOR", "", "A sturdy looking door, it seems locked. I can hear birds chirping on the other side of it.", "1230", false, false);
+            CreateItem("DOOR", "", "A sturdy looking door, it seems locked. I can hear birds chirping on the other side of it.", "1230", false);
             return itemCollection;
             
         }

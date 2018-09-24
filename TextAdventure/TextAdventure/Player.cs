@@ -162,6 +162,16 @@ namespace TextAdventure
                     currentLocation.roomInventory.Add(newDoor.name, newDoor);
                     
                 }
+                else if (itemTwo.Equals("LOCKBOX"))
+                {
+                    Console.WriteLine("The lockbox is now open. Inside it lies a lockpick. You store it in your inventory.");
+                    Console.WriteLine();
+                    playerInventory.Remove(itemTwo);
+                    Item openLB = new Item("LOCKBOX", "Opened lockbox, it's empty.", "Opened lockbox thrown on the floor.", true);
+                    playerInventory.Add(openLB.name, openLB);
+                    Item lockpick = new Item("LOCKPICK", "Used for opening locked things.", "A slim looking lockpick lying on the dusty floor.", "1230", true);
+                    playerInventory.Add(lockpick.name, lockpick);
+                }
                 else if (secondItem.name.Equals("CLINT"))
                 {
                     Console.WriteLine("Did you like it? Clint asks as he slowly turns his head towards the TV again.");

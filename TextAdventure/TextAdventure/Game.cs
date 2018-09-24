@@ -12,7 +12,6 @@ namespace TextAdventure
         public Player player;
         public Dictionary<string, Room> roomCollection;
         public Dictionary<string, Item> itemCollection;
-        //public TextHandler th = new TextHandler();
         public string[,] map = new string[3, 3];
         public string[] userInput;
         public int xCoord = 1;

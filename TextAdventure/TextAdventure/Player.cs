@@ -82,7 +82,15 @@ namespace TextAdventure
             Item useItem = currentLocation.roomInventory[item];
             if (useItem.name.Equals("DOOR") && "1337".Equals(useItem.ID))
             {
-                Console.WriteLine("You made it! VICTORY IS YOURS!");
+                Console.WriteLine(@"      ___________                                   ");
+                Console.WriteLine(@"     | ___ |     |                                  ");
+                Console.WriteLine(@"     ||___||  0 /|                                  ");
+                Console.WriteLine(@"     | ___*|--|/ |                                  ");
+                Console.WriteLine(@"     ||___||  |  |                                  ");
+                Console.WriteLine(@"     |_____|_/_\_|                                  ");
+                Console.WriteLine(@"                  Made by: Gabriel, Max and Robert.T");
+                Console.WriteLine("                                                     ");
+                Console.WriteLine("You made it! VICTORY IS YOURS!                       ");
                 Console.WriteLine();
                 Console.ReadKey();
                 Environment.Exit(0);

@@ -82,7 +82,15 @@ namespace TextAdventure
             Item useItem = currentLocation.roomInventory[item];
             if (useItem.name.Equals("DOOR") && "1337".Equals(useItem.ID))
             {
-                Console.WriteLine("You made it! VICTORY IS YOURS!");
+                Console.WriteLine(@"      ___________                                   ");
+                Console.WriteLine(@"     | ___ |     |                                  ");
+                Console.WriteLine(@"     ||___||  0 /|                                  ");
+                Console.WriteLine(@"     | ___*|--|/ |                                  ");
+                Console.WriteLine(@"     ||___||  |  |                                  ");
+                Console.WriteLine(@"     |_____|_/_\_|                                  ");
+                Console.WriteLine(@"                  Made by: Gabriel, Max and Robert.T");
+                Console.WriteLine("                                                     ");
+                Console.WriteLine("You made it! VICTORY IS YOURS!                       ");
                 Console.WriteLine();
                 Console.ReadKey();
                 Environment.Exit(0);
@@ -200,7 +208,7 @@ namespace TextAdventure
                 if (secondItem.name.Equals("SKÅNING"))
                 {
                     Console.WriteLine("Skåningen realizes slowly what's in your hand and strikes faster than a Cheetah, grabbing the container and stuffing everything in it up his mouth.");
-                    Console.WriteLine("SATAN VA SNUS! The skåning shouts as his teeth are completely covered with the dark powder.");
+                    Console.WriteLine("Bedst at udstå, hvad man ikke kan undgå, ålahue! The skåning shouts as his teeth are completely covered with the dark powder.");
                     Console.WriteLine();
                     playerInventory.Remove(itemOne);
                 }

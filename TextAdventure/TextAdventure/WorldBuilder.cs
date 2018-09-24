@@ -83,8 +83,8 @@ namespace TextAdventure
             CreateItem("POSTER", "A movie poster, Clint Eastwood is the star of the movie.", "A poster hanging on the left side of the room. The good, the bad and the uglys movie cover is printed on it. ", "1000", true);
             CreateItem("CONTAINER", "A container with a text Prima Fint Snus.", "A round container with some text written on it. It's lying upside down. ", "8008", true);
             CreateItem("RAT", "", "A disgusting albino rat with human eyes is dashing around the room. ", "05", false);
-            CreateItem("CHUCK", "", "You suddenly feel alot better knowing that Chuck is here to save the day. But what is he doing here?\r\n", "1001" , false);
-            CreateItem("DOOR", "", "There's a sturdy looking door here, it seems locked. I can hear birds chirping on the other side of it. ", "1230", false);
+            CreateItem("CHUCK", "", "You suddenly feel alot better knowing that Chuck is here to save the day. But why is really here?\r\n", "1001" , false);
+            CreateItem("DOOR", "", "There's a sturdy looking door here, it seems locked. I can hear birds chirping on the other side of it. *CHIRP*", "1230", false);
             return itemCollection;
             
         }

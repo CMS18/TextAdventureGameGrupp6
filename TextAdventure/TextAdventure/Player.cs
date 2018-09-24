@@ -191,7 +191,9 @@ namespace TextAdventure
                 if (secondItem.name.Equals("GIRL"))
                 {
                     Console.WriteLine("The scary girl accepts your gift..");
-                    Console.WriteLine("Although she still looks freaking terrifying she atleast smells good now.");
+                    Console.WriteLine("That's better! Didn't want to insult her, but she smelled like old cheese.. Still look scary as hell though.");
+                    
+                        //"Although she still looks freaking terrifying she at least smells good now."
                     Console.WriteLine();
                     playerInventory.Remove(itemOne);
                 }

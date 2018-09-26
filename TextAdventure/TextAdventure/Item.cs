@@ -1,22 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TextAdventure
+﻿namespace TextAdventure
 {
     public class Item
     {
+        public string ID;
         public string name;
+        public bool pickUpAble;
         public string playerInventoryDesc;
         public string roomInventoryDesc;
-        public string ID;
-        public bool pickUpAble;
-
-        public Item()
-        {
-        }
 
         public Item(string itemName, string playerInvDesc, string roomInvDesc, string itemID, bool small)
         {
@@ -25,27 +15,6 @@ namespace TextAdventure
             roomInventoryDesc = roomInvDesc;
             ID = itemID;
             pickUpAble = small;
-        }
-
-        public Item(string itemName, string playerInvDesc, string roomInvDesc, bool small)
-        {
-            name = itemName;
-            playerInventoryDesc = playerInvDesc;
-            roomInventoryDesc = roomInvDesc;
-            pickUpAble = small;
-        }
-
-        public void Use(string item)
-        {
-            //If the item is usable, use it.
-            throw new NotImplementedException();
-        }
-
-        public void Use(string itemOne, string itemTwo)
-        {
-            //Check if the second item is in the player inventory or if it's in the room/find where the items are located.
-            //If the two items can be used together, use them.
-            throw new NotImplementedException();
         }
     }
 }

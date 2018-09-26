@@ -1,22 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TextAdventure
 {
     public class Game
     {
-        public Player player;
-        public Dictionary<string, Room> roomCollection;
         public Dictionary<string, Item> itemCollection;
         public string[,] map = new string[3, 3];
+        public Player player;
+        public Dictionary<string, Room> roomCollection;
         public string[] userInput;
+        public bool victory = false;
         public int xCoord = 1;
         public int yCoord = 1;
-        public bool victory = false;
 
         public Game()
         {
@@ -26,7 +22,7 @@ namespace TextAdventure
 
         public void NewGame()
         {
-            WorldBuilder wb = new WorldBuilder();
+            var wb = new WorldBuilder();
             itemCollection = wb.CreateItems();
             roomCollection = wb.CreateRooms();
             CreateMap();
@@ -45,30 +41,34 @@ namespace TextAdventure
         {
             NewGame();
             player.currentLocation = roomCollection["START"];
-            Console.WriteLine(@"    ____     _____    _           _  _______    _         _   ___________   _      _   _____    _______ ");
-            Console.WriteLine(@"  /      \  |  __  \  \\         // |  _____|  | |\\     | | |____   ____| | |    | | |   _ \\ |  _____|");
-            Console.WriteLine(@" |   /\   | | |  \  \  \\       //  | |____    | | \\    | |      | |      | |    | | |  | ||| | |____  ");
-            Console.WriteLine(@" |  |__|  | | |   | |   \\     //   |  ____|   | |  \\   | |      | |      | |    | | |   __// |  ____| ");
-            Console.WriteLine(@" |        | | |   | |    \\   //    | |        | |   \\  | |      | |      | |    | | |  |\\   | |      ");
-            Console.WriteLine(@" |        | | |__/ /      \\ //     | |______  | |    \\ | |      | |       \\    //  |  | \\  | |______");
-            Console.WriteLine(@" |___||___| |_____/        \\/      |________| |_|     \\|_|      |_|        \\__//   |__|  \\ |________|");
+            Console.WriteLine(
+                @"    ____     _____    _           _  _______    _         _   ___________   _      _   _____    _______ ");
+            Console.WriteLine(
+                @"  /      \  |  __  \  \\         // |  _____|  | |\\     | | |____   ____| | |    | | |   _ \\ |  _____|");
+            Console.WriteLine(
+                @" |   /\   | | |  \  \  \\       //  | |____    | | \\    | |      | |      | |    | | |  | ||| | |____  ");
+            Console.WriteLine(
+                @" |  |__|  | | |   | |   \\     //   |  ____|   | |  \\   | |      | |      | |    | | |   __// |  ____| ");
+            Console.WriteLine(
+                @" |        | | |   | |    \\   //    | |        | |   \\  | |      | |      | |    | | |  |\\   | |      ");
+            Console.WriteLine(
+                @" |        | | |__/ /      \\ //     | |______  | |    \\ | |      | |       \\    //  |  | \\  | |______");
+            Console.WriteLine(
+                @" |___||___| |_____/        \\/      |________| |_|     \\|_|      |_|        \\__//   |__|  \\ |________|");
             Console.WriteLine();
-            Console.WriteLine("                  WELCOME TO PORK. A SIMPLE TEXT ADVENTURE GAME MADE FOR SIMPLE PEOPLE.                   ");
+            Console.WriteLine(
+                "                  WELCOME TO PORK. A SIMPLE TEXT ADVENTURE GAME MADE FOR SIMPLE PEOPLE.                   ");
             Console.WriteLine();
             Console.WriteLine();
             Console.Write("What is your epic gamertag?  ");
             player.playerName = Console.ReadLine();
             Console.WriteLine();
             player.currentLocation.Look();
-            bool stillPlaying = true;
+            var stillPlaying = true;
             while (stillPlaying)
-            {
-
-                
                 CheckText();
 
-                //break;
-            }
+            //break;
         }
 
         public void Win()
@@ -77,34 +77,30 @@ namespace TextAdventure
             {
                 Console.WriteLine("Do you want to play again?");
                 Console.Write("(YES/NO):");
-                string input = Console.ReadLine().ToUpper();
+                var input = Console.ReadLine().ToUpper();
 
                 if (!input.Equals("YES"))
                 {
                     if (input.Equals("NO"))
-                    {
                         Environment.Exit(0);
-                    }
                     else
-                    {
                         Console.WriteLine("Please control your writing.");
-                    }
                 }
+
                 NewGame();
             }
         }
 
         public void Move(string direction)
         {
-            
             if (map[yCoord, xCoord].Equals(direction))
             {
                 Console.WriteLine("You can't go in the " + direction + " direction.");
                 Console.WriteLine();
-            }       
-            else if (direction.Equals("NORTH")) 
+            }
+            else if (direction.Equals("NORTH"))
             {
-                if(xCoord == 0 || xCoord == 2)
+                if (xCoord == 0 || xCoord == 2)
                 {
                     Console.WriteLine("You can't go in the " + direction + " direction.");
                     Console.WriteLine();
@@ -115,11 +111,10 @@ namespace TextAdventure
                     player.currentLocation = roomCollection[map[yCoord, xCoord]];
                     player.currentLocation.Look();
                 }
-               
             }
             else if (direction.Equals("WEST"))
             {
-                if(yCoord == 0 || yCoord == 2)
+                if (yCoord == 0 || yCoord == 2)
                 {
                     Console.WriteLine("You can't go in the " + direction + " direction.");
                     Console.WriteLine();
@@ -133,7 +128,7 @@ namespace TextAdventure
             }
             else if (direction.Equals("EAST"))
             {
-                if(yCoord == 0 || yCoord == 2)
+                if (yCoord == 0 || yCoord == 2)
                 {
                     Console.WriteLine("You can't go in the " + direction + " direction.");
                     Console.WriteLine();
@@ -147,7 +142,7 @@ namespace TextAdventure
             }
             else
             {
-                if(xCoord == 0 || xCoord == 2)
+                if (xCoord == 0 || xCoord == 2)
                 {
                     Console.WriteLine("You can't go in the " + direction + " direction.");
                     Console.WriteLine();
@@ -159,9 +154,6 @@ namespace TextAdventure
                     player.currentLocation.Look();
                 }
             }
-                
-                
-                
         }
 
         public void CheckText()
@@ -173,7 +165,8 @@ namespace TextAdventure
             {
                 if (userInput.Length > 1)
                 {
-                    if (userInput[1].Equals("NORTH") || userInput[1].Equals("WEST") || userInput[1].Equals("EAST") || userInput[1].Equals("SOUTH"))
+                    if (userInput[1].Equals("NORTH") || userInput[1].Equals("WEST") || userInput[1].Equals("EAST") ||
+                        userInput[1].Equals("SOUTH"))
                     {
                         Move(userInput[1]);
                     }
@@ -191,20 +184,21 @@ namespace TextAdventure
             }
             else if (userInput[0].Equals("USE") || userInput[0].Equals("U"))
             {
-                if(userInput.Length > 1)
+                if (userInput.Length > 1)
                 {
                     if (player.playerInventory.ContainsKey(userInput[1]))
                     {
-                        if(userInput.Length == 2)
+                        if (userInput.Length == 2)
                         {
                             player.Use(userInput[1]);
                         }
-                        else if(userInput.Length == 3)
+                        else if (userInput.Length == 3)
                         {
                             Console.WriteLine("Please be a little more precise... USE <ITEM> ON <ITEM>..");
                             Console.WriteLine();
                         }
-                        else if (player.currentLocation.roomInventory.ContainsKey(userInput[3]) && userInput[2].Equals("ON"))
+                        else if (player.currentLocation.roomInventory.ContainsKey(userInput[3]) &&
+                                 userInput[2].Equals("ON"))
                         {
                             player.UseOnRoomItem(userInput[1], userInput[3]);
                         }
@@ -218,23 +212,20 @@ namespace TextAdventure
                             Console.WriteLine();
                         }
                     }
+
                     if (player.currentLocation.roomInventory.ContainsKey(userInput[1]))
-                    {
                         player.UseSomethingInRoom(userInput[1]);
-                    }
                 }
                 else
                 {
                     Console.WriteLine("Using nothing seems kinda useless");
                     Console.WriteLine();
                 }
-
             }
             else if (userInput[0].Equals("TAKE") || userInput[0].Equals("T"))
             {
                 if (userInput.Length > 1)
                 {
-                    
                     if (player.currentLocation.roomInventory.ContainsKey(userInput[1]))
                     {
                         player.PickItem(userInput[1]);
@@ -276,13 +267,8 @@ namespace TextAdventure
                 if (userInput.Length > 1)
                 {
                     if (player.currentLocation.roomInventory.ContainsKey(userInput[1]))
-                    {
                         player.currentLocation.InspectItem(userInput[1]);
-                    }
-                    else if (player.playerInventory.ContainsKey(userInput[1]))
-                    {
-                        player.InspectItem(userInput[1]);
-                    }
+                    else if (player.playerInventory.ContainsKey(userInput[1])) player.InspectItem(userInput[1]);
                 }
                 else
                 {
@@ -294,7 +280,7 @@ namespace TextAdventure
             {
                 player.currentLocation.Look();
             }
-            else if(userInput[0].Equals("INVENTORY") || userInput[0].Equals("INV"))
+            else if (userInput[0].Equals("INVENTORY") || userInput[0].Equals("INV"))
             {
                 player.ShowInventory();
             }

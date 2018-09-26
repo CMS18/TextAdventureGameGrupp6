@@ -1,25 +1,18 @@
 ﻿using System;
-using System.CodeDom;
 using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TextAdventure
 {
     public class Player
     {
-        public string playerName;
-        public Dictionary<string, Item> playerInventory;
         public Room currentLocation;
-        //public Item description;
+        public Dictionary<string, Item> playerInventory;
+        public string playerName;
 
         public Player()
         {
             playerInventory = new Dictionary<string, Item>();
             currentLocation = new Room();
-            //description = new Item();
         }
 
         public void DropItem(string item)
@@ -32,16 +25,19 @@ namespace TextAdventure
         {
             if (currentLocation.roomInventory[item].pickUpAble)
             {
-                //&& ID is correct "1000"
                 if (item.Equals("POSTER") && currentLocation.roomInventory[item].ID.Equals("1000"))
                 {
                     Console.WriteLine("Behind the poster is a secret stash. A small lockbox is lying here.");
                     Console.WriteLine();
-                    Item poster = new Item("POSTER", "A movie poster, Clint Eastwood is the star of the movie.", "A poster hanging on the left side of the room. The good, the bad and the uglys movie cover is printed on it. ", "1009", true);
+                    var poster = new Item("POSTER", "A movie poster, Clint Eastwood is the star of the movie.",
+                        "A poster hanging on the left side of the room. The good, the bad and the uglys movie cover is printed on it. ",
+                        "1009", true);
                     currentLocation.roomInventory.Remove(item);
                     playerInventory.Add(poster.name, poster);
                     currentLocation.roomInventory.Remove(item);
-                    Item lockbox = new Item("LOCKBOX", "A small locked lockbox", "With the poster gone there's now a small lockbox standing in the hidden area the poster was covering.", "1200", true);
+                    var lockbox = new Item("LOCKBOX", "A small locked lockbox",
+                        "With the poster gone there's now a small lockbox standing in the hidden area the poster was covering.",
+                        "1200", true);
                     currentLocation.roomInventory.Add(lockbox.name, lockbox);
                 }
                 else
@@ -49,37 +45,36 @@ namespace TextAdventure
                     playerInventory.Add(item, currentLocation.roomInventory[item]);
                     currentLocation.roomInventory.Remove(item);
                 }
-                
             }
             else
             {
                 Console.WriteLine("Are you really trying to pick up a frickin " + item + "?");
                 Console.WriteLine();
             }
-            
         }
 
         public void ShowInventory()
         {
-            int itemNr = 1;
+            var itemNr = 1;
             foreach (var item in playerInventory.Keys)
             {
                 Console.WriteLine(itemNr + ". " + item);
                 itemNr++;
             }
+
             Console.WriteLine();
         }
 
         public void InspectItem(string item)
         {
-            Item tempItem = playerInventory[item];
+            var tempItem = playerInventory[item];
             Console.WriteLine(tempItem.playerInventoryDesc);
             Console.WriteLine();
         }
 
         public void UseSomethingInRoom(string item)
         {
-            Item useItem = currentLocation.roomInventory[item];
+            var useItem = currentLocation.roomInventory[item];
             if (useItem.name.Equals("DOOR") && "1337".Equals(useItem.ID))
             {
                 Console.WriteLine(@"      ___________                                   ");
@@ -94,9 +89,8 @@ namespace TextAdventure
                 Console.WriteLine();
                 Console.ReadKey();
                 Environment.Exit(0);
-
             }
-            
+
             else
             {
                 Console.WriteLine("You crazy? What exactly are you going for here?");
@@ -106,46 +100,46 @@ namespace TextAdventure
 
         public void Use(string item)
         {
-            //If the item is usable, use it.
-            Item useItem = playerInventory[item];
+            var useItem = playerInventory[item];
             if ("0002".Equals(useItem.ID))
             {
                 if (useItem.name.Equals("CANDYBAR"))
                 {
                     Console.WriteLine("You feel a lot better instantly. You're not you when you're hungry...");
-                    Console.WriteLine("As you take your third bite you strike something hard within the candybar.. WTF! WHO PUT A KEY IN THE CANDYBAR" +
-                                      " **KEY ADDED TO INVENTORY**");
+                    Console.WriteLine(
+                        "As you take your third bite you strike something hard within the candybar.. WTF! WHO PUT A KEY IN THE CANDYBAR" +
+                        " **KEY ADDED TO INVENTORY**");
                     Console.WriteLine();
                     playerInventory.Remove(useItem.name);
-                    Item key = new Item("KEY", "A key, wonder where it leads to?", "A small key lying on the floor ", "1200", true);
+                    var key = new Item("KEY", "A key, wonder where it leads to?", "A small key lying on the floor ",
+                        "1200", true);
                     playerInventory.Add(key.name, key);
                 }
-                
             }
             else
             {
                 Console.WriteLine("You crazy? What exactly are you going for here?");
                 Console.WriteLine();
             }
-            //throw new NotImplementedException();
         }
 
         public void UseOnInvItem(string itemOne, string itemTwo)
         {
-            //Check if the second item is in the player inventory or if it's in the room/find where the items are located.
-            Item firstItem = playerInventory[itemOne];
-            Item secondItem = playerInventory[itemTwo];
+            var firstItem = playerInventory[itemOne];
+            var secondItem = playerInventory[itemTwo];
             if (firstItem.ID.Equals(secondItem.ID))
             {
-                //Add more items.
                 if (itemTwo.Equals("LOCKBOX"))
                 {
-                    Console.WriteLine("The lockbox is now open. Inside it lies a lockpick. **LOCKPICK ADDED TO INVENTORY**");
+                    Console.WriteLine(
+                        "The lockbox is now open. Inside it lies a lockpick. **LOCKPICK ADDED TO INVENTORY**");
                     Console.WriteLine();
                     playerInventory.Remove(itemTwo);
-                    Item openLB = new Item("LOCKBOX", "Opened lockbox, it's empty.", "Opened lockbox thrown on the floor. ", "051", true);
+                    var openLB = new Item("LOCKBOX", "Opened lockbox, it's empty.",
+                        "Opened lockbox thrown on the floor. ", "051", true);
                     playerInventory.Add(openLB.name, openLB);
-                    Item lockpick = new Item("LOCKPICK", "Used for opening locked things.", "A slim looking lockpick lying on the dusty floor. ", "1230", true);
+                    var lockpick = new Item("LOCKPICK", "Used for opening locked things.",
+                        "A slim looking lockpick lying on the dusty floor. ", "1230", true);
                     playerInventory.Add(lockpick.name, lockpick);
                 }
             }
@@ -154,15 +148,12 @@ namespace TextAdventure
                 Console.WriteLine("You're not a wizard Harry, try using the item with something else.");
                 Console.WriteLine();
             }
-            //If the two items can be used together, use them.
-            //throw new NotImplementedException();
         }
 
         public void UseOnRoomItem(string itemOne, string itemTwo)
         {
-            //Check if the second item is in the player inventory or if it's in the room/find where the items are located.
-            Item firstItem = playerInventory[itemOne];
-            Item secondItem = currentLocation.roomInventory[itemTwo];
+            var firstItem = playerInventory[itemOne];
+            var secondItem = currentLocation.roomInventory[itemTwo];
             if (firstItem.ID.Equals(secondItem.ID))
             {
                 if (secondItem.name.Equals("DOOR"))
@@ -170,18 +161,21 @@ namespace TextAdventure
                     Console.WriteLine("The door is now open.");
                     Console.WriteLine();
                     currentLocation.roomInventory.Remove(secondItem.name);
-                    Item newDoor = new Item("DOOR", "", "The closed door is now open. Should I make a run for it? ", "1337", false);
+                    var newDoor = new Item("DOOR", "", "The closed door is now open. Should I make a run for it? ",
+                        "1337", false);
                     currentLocation.roomInventory.Add(newDoor.name, newDoor);
-                    
                 }
                 else if (itemTwo.Equals("LOCKBOX"))
                 {
-                    Console.WriteLine("The lockbox is now open. Inside it lies a lockpick. You store it in your inventory.");
+                    Console.WriteLine(
+                        "The lockbox is now open. Inside it lies a lockpick. You store it in your inventory.");
                     Console.WriteLine();
                     playerInventory.Remove(itemTwo);
-                    Item openLB = new Item("LOCKBOX", "Opened lockbox, it's empty.", "Opened lockbox thrown on the floor. ", "051", true);
+                    var openLB = new Item("LOCKBOX", "Opened lockbox, it's empty.",
+                        "Opened lockbox thrown on the floor. ", "051", true);
                     playerInventory.Add(openLB.name, openLB);
-                    Item lockpick = new Item("LOCKPICK", "Used for opening locked things.", "A slim looking lockpick lying on the dusty floor. ", "1230", true);
+                    var lockpick = new Item("LOCKPICK", "Used for opening locked things.",
+                        "A slim looking lockpick lying on the dusty floor. ", "1230", true);
                     playerInventory.Add(lockpick.name, lockpick);
                 }
                 else if (secondItem.name.Equals("CLINT"))
@@ -192,23 +186,28 @@ namespace TextAdventure
                 }
                 else if (secondItem.name.Equals("CHUCK"))
                 {
-                    Console.WriteLine("I KNEW MY TOOTHBRUSH WAS HERE! Chuck shouts out, jumping gladly around the room.");
+                    Console.WriteLine(
+                        "I KNEW MY TOOTHBRUSH WAS HERE! Chuck shouts out, jumping gladly around the room.");
                     Console.WriteLine();
                     playerInventory.Remove(itemOne);
                 }
+
                 if (secondItem.name.Equals("GIRL"))
                 {
                     Console.WriteLine("The scary girl accepts your gift..");
-                    Console.WriteLine("That's better! Didn't want to insult her, but she smelled like old cheese.. Still look scary as hell though.");
-                    
-                        //"Although she still looks freaking terrifying she at least smells good now."
+                    Console.WriteLine(
+                        "That's better! Didn't want to insult her, but she smelled like old cheese.. Still look scary as hell though.");
+
                     Console.WriteLine();
                     playerInventory.Remove(itemOne);
                 }
+
                 if (secondItem.name.Equals("SKÅNING"))
                 {
-                    Console.WriteLine("Skåningen realizes slowly what's in your hand and strikes faster than a Cheetah, grabbing the container and stuffing everything in it up his mouth.");
-                    Console.WriteLine("Bedst at udstå, hvad man ikke kan undgå, ålahue! The skåning shouts as his teeth are completely covered with the dark powder.");
+                    Console.WriteLine(
+                        "Skåningen realizes slowly what's in your hand and strikes faster than a Cheetah, grabbing the container and stuffing everything in it up his mouth.");
+                    Console.WriteLine(
+                        "Bedst at udstå, hvad man ikke kan undgå, ålahue! The skåning shouts as his teeth are completely covered with the dark powder.");
                     Console.WriteLine();
                     playerInventory.Remove(itemOne);
                 }
@@ -218,8 +217,6 @@ namespace TextAdventure
                 Console.WriteLine("You're not a wizard Harry, try using the item with something else.");
                 Console.WriteLine();
             }
-            //If the two items can be used together, use them.
-            //throw new NotImplementedException();
         }
     }
 }

@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TextAdventure
 {
@@ -15,10 +12,9 @@ namespace TextAdventure
         public Room()
         {
             roomInventory = new Dictionary<string, Item>();
-
         }
 
-        public Room(string name, string roomDescription, Dictionary<string,Item> roomInventory)
+        public Room(string name, string roomDescription, Dictionary<string, Item> roomInventory)
         {
             this.name = name;
             this.roomDescription = roomDescription;
@@ -28,33 +24,24 @@ namespace TextAdventure
         public void Look()
         {
             Console.WriteLine(roomDescription);
-            List<string> keys = new List<string>(roomInventory.Keys);
-            //int words = 0;
-            
-            for (int i = 0; i < roomInventory.Count; i++)
-            {
-                /*
-                if(words == 2)
-                {
-                    Console.Write("\r\n");
-                }
-                */
-                Item tempItem = roomInventory[keys[i]];
-                Console.Write(tempItem.roomInventoryDesc);
-                //words++;
-            }
-            
-            Console.WriteLine();
-            Console.WriteLine();
+            var keys = new List<string>(roomInventory.Keys);
 
+
+            for (var i = 0; i < roomInventory.Count; i++)
+            {
+                var tempItem = roomInventory[keys[i]];
+                Console.Write(tempItem.roomInventoryDesc);
+            }
+
+            Console.WriteLine();
+            Console.WriteLine();
         }
 
         public void InspectItem(string itemToInsp)
         {
-            Item tempItem = roomInventory[itemToInsp];
+            var tempItem = roomInventory[itemToInsp];
             Console.WriteLine(tempItem.roomInventoryDesc);
             Console.WriteLine();
         }
-        
     }
 }

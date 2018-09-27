@@ -67,8 +67,8 @@ namespace TextAdventure
             CreateItem("CANDYBAR", "It looks tasty.", "There's a candybar lying all alone on the floor. ", "0002",
                 true);
             CreateItem("GAMEGUIDE",
-                "Valid commands are: \r\nGo <direction>,\r\nUse <item>, Use <item> on <item>,\r\nTake <item>,\r\nDrop <item>," +
-                "\r\nInspect <item> \r\nand Look.",
+                "Valid commands are: \r\nGo <direction>\r\nUse <item> \r\nUse <item> on <item>\r\nTake <item>\r\nDrop <item>" +
+                "\r\nInspect <item>\r\nInventory \r\nLook",
                 "An old and dusty gameguide for some game long forgotten is lying here. ", "08", true);
             CreateItem("GIRL", "",
                 "She is standing completely still in the right corner. You can hear her singing something..\r\n", "930",
@@ -78,7 +78,7 @@ namespace TextAdventure
             CreateItem("SKÅNING", "", "As crazy as they come, this Skåning is batshit crazy. I wonder why?\r\n", "8008",
                 false);
             CreateItem("TOOTHBRUSH", "A used toothbrush, barely any straws are left on it.",
-                "Old and used toothbrush. ", "1001", true);
+                " An old and used toothbrush. ", "1001", true);
             CreateItem("CLINT", "", "Clint gives you a quick stare before turning his head back to the TV.\r\n", "1009",
                 false);
             CreateItem("POSTER", "A movie poster, Clint Eastwood is the star of the movie.",

@@ -78,7 +78,7 @@ namespace TextAdventure
             CreateItem("SKÅNING", "", "As crazy as they come, this Skåning is batshit crazy. I wonder why?\r\n", "8008",
                 false);
             CreateItem("TOOTHBRUSH", "A used toothbrush, barely any straws are left on it.",
-                " An old and used toothbrush. ", "1001", true);
+                "An old and used toothbrush. ", "1001", true);
             CreateItem("CLINT", "", "Clint gives you a quick stare before turning his head back to the TV.\r\n", "1009",
                 false);
             CreateItem("POSTER", "A movie poster, Clint Eastwood is the star of the movie.",

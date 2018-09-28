@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Speech.Synthesis;
 namespace TextAdventure
 {
     public class Game
@@ -39,6 +39,9 @@ namespace TextAdventure
 
         public void PlayingGame()
         {
+            SpeechSynthesizer voice = new SpeechSynthesizer();
+            voice.SetOutputToDefaultAudioDevice();
+
             NewGame();
             player.currentLocation = roomCollection["START"];
             Console.WriteLine(
@@ -58,10 +61,14 @@ namespace TextAdventure
             Console.WriteLine();
             Console.WriteLine(
                 "                  WELCOME TO PORK. A SIMPLE TEXT ADVENTURE GAME MADE FOR SIMPLE PEOPLE.                   ");
+            
             Console.WriteLine();
             Console.WriteLine();
-            Console.Write("What is your epic gamertag?  ");
+            voice.Speak("WELCOME TO PORK. A SIMPLE TEXT ADVENTURE GAME MADE FOR SIMPLE PEOPLE.");
+            voice.Speak("What is your epic gamertag?");
+            Console.Write("Enter epic gamertag: ");
             player.playerName = Console.ReadLine();
+            voice.Speak("Okay " +player.playerName + "...let's get this game started!");
             Console.WriteLine();
             player.currentLocation.Look();
             var stillPlaying = true;

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Speech.Synthesis;
 
 namespace TextAdventure
 {
@@ -83,6 +84,11 @@ namespace TextAdventure
                 Console.WriteLine(@"     | ___*|--|/ |                                  ");
                 Console.WriteLine(@"     ||___||  |  |                                  ");
                 Console.WriteLine(@"     |_____|_/_\_|                                  ");
+                SpeechSynthesizer voice = new SpeechSynthesizer();
+                voice.SetOutputToDefaultAudioDevice();
+                voice.Speak("As you open the door and step outside you realize that you actually made it through that nightmarish house.");
+                voice.Speak("VICTORY IS YOURS!");
+
                 Console.WriteLine(@"                  Made by: Gabriel, Max and Robert.T");
                 Console.WriteLine("                                                     ");
                 Console.WriteLine("      ******You made it! VICTORY IS YOURS!******     ");
@@ -181,6 +187,9 @@ namespace TextAdventure
                 else if (secondItem.name.Equals("CLINT"))
                 {
                     Console.WriteLine("Did you like it? Clint asks as he slowly turns his head towards the TV again.");
+                    SpeechSynthesizer voice = new SpeechSynthesizer();
+                    voice.SetOutputToDefaultAudioDevice();
+                    voice.Speak("Did you like it?");
                     Console.WriteLine();
                     playerInventory.Remove(itemOne);
                 }
@@ -188,6 +197,9 @@ namespace TextAdventure
                 {
                     Console.WriteLine(
                         "I KNEW MY TOOTHBRUSH WAS HERE! Chuck shouts out, jumping gladly around the room.");
+                    SpeechSynthesizer voice = new SpeechSynthesizer();
+                    voice.SetOutputToDefaultAudioDevice();
+                    voice.Speak("I KNEW MY TOOTHBRUSH WAS HERE!");
                     Console.WriteLine();
                     playerInventory.Remove(itemOne);
                 }
@@ -208,6 +220,9 @@ namespace TextAdventure
                         "Skåningen realizes slowly what's in your hand and strikes faster than a Cheetah, grabbing the container and stuffing everything in it up his mouth.");
                     Console.WriteLine(
                         "Bedst at udstå, hvad man ikke kan undgå, ålahue! The skåning shouts as his teeth are completely covered with the dark powder.");
+                    SpeechSynthesizer voice = new SpeechSynthesizer();
+                    voice.SetOutputToDefaultAudioDevice();
+                    voice.Speak("Bedst at udstå, hvad man ikke kan undgå, ålahue!");
                     Console.WriteLine();
                     playerInventory.Remove(itemOne);
                 }
